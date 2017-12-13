@@ -10,9 +10,16 @@ def print_students_titlecase():
     students_titlecase = get_students_titlecase()
     print(students_titlecase)
 
-def add_student_name(name):
+def add_student(name, student_id=332):
+    student = {"name": name, "student_id": student_id}
     students.append(name)
+
+def var_args(name, **kwargs):
+    print(name)
+    print(kwargs["description"], kwargs["feedback"])
 
 student_list = get_students_titlecase()
 
-add_student_name("Mark")
+add_student(name="Mark", student_id=15)
+
+var_args("Mark", description="Loves Python", feedback=None, pluralsight_subscriber=True)
