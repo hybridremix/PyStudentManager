@@ -1,5 +1,6 @@
 students = []
 
+
 class Student:
 
     school_name = "Springfield Elementary"
@@ -12,14 +13,26 @@ class Student:
     def __str__(self):
         return "Student " + self.name
 
-    def get_name_capitalization(self):
-        return self.get_name_capitalization()
+    def get_name_capitalized(self):
+        return self.name.capitalize()
 
     def get_school_name(self):
         return self.school_name
 
 
-#mark = Student("Mark")
-#print(mark)
+class HS_Student(Student):
 
-print(Student.school_name)
+    school_name = "Springfield High"
+
+    def get_school_name(self):
+        return "This is a high school student"
+
+    def get_name_capitalized(self):
+        original_value = super().get_name_capitalized()
+        return original_value + "-HS"
+
+
+james = HS_Student("james")
+print(james)
+print(james.get_name_capitalized())
+print(james.get_school_name())
