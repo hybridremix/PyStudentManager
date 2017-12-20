@@ -17,6 +17,10 @@ class Student:
         return self.name.capitalize()
 
     def get_school_name(self):
+        """
+        Returns the name of this student's school.
+        :return: The string saved for the name of the student's school.
+        """
         return self.school_name
 
 
