@@ -5,16 +5,17 @@ class Student:
 
     school_name = "Springfield Elementary"
 
-    def __init__(self, name, student_id=332):
-        self.name = name
+    def __init__(self, given_name, family_name, student_id=332):
+        self.firstName = given_name
+        self.lastName = family_name
         self.student_id = student_id
         students.append(self)
 
     def __str__(self):
-        return "Student " + self.name
+        return "Student " + self.firstName + " " + self.lastName
 
     def get_name_capitalized(self):
-        return self.name.capitalize()
+        return self.firstName.capitalize() + " " + self.lastName.capitalize()
 
     def get_school_name(self):
         """
@@ -29,8 +30,8 @@ class HS_Student(Student):
     school_name = "Springfield High"
 
     def get_school_name(self):
-        return "This is a high school student"
+        return self.firstName + " " + self.lastName + " is a high school student"
 
     def get_name_capitalized(self):
         original_value = super().get_name_capitalized()
-        return original_value + "-HS"
+        return original_value + " -HS"
